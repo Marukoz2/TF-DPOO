@@ -65,6 +65,11 @@ public class Tienda {
 	}
 	
 	
+	public void addTrabajador(String nombre, String apellido, String id, int numTrab,
+			double salarioBas, String nivelEsc, String cargo ){
+		Trabajador aux = new Trabajador(nombre, apellido, id, numTrab, salarioBas, nivelEsc, cargo);
+		trabajadores.add(aux);
+	}
 
 
 
