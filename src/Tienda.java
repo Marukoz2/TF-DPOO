@@ -65,10 +65,39 @@ public class Tienda {
 	}
 	
 	
-	public void addTrabajador(String nombre, String apellido, String id, int numTrab,
-			double salarioBas, String nivelEsc, String cargo ){
-		Trabajador aux = new Trabajador(nombre, apellido, id, numTrab, salarioBas, nivelEsc, cargo);
-		trabajadores.add(aux);
+	public Trabajador crearTrabajador(String nombre, String apellido, String id, int numTrab,
+			double salarioBas, String nivelEsc, String cargo){
+		return new Trabajador(nombre, apellido, id, numTrab, salarioBas, nivelEsc, cargo);
+		
+	}
+	public void addTrabajador(Trabajador trabajador){
+		trabajadores.add(trabajador);
+	}
+	public void delTrabajador(String id){
+		boolean encontrado = false;	
+		for(int i=0;i<trabajadores.size() && !encontrado;i++){
+			if(trabajadores.get(i).equals(id)){
+				trabajadores.remove(i);
+				encontrado = true;
+			}
+		}
+	}
+	public void modTrabajador(String id, String nuevoNombre, String nuevoApellido, int nuevoNumTrab,
+			double nuevoSalarioBas, String nuevoNivelEsc, String nuevoCargo){
+		for(Trabajador trabajador : trabajadores){
+			if(trabajador.getId().equals(id)){
+				trabajador.setNombre(nuevoNombre);
+				trabajador.setApellido(nuevoApellido);
+				trabajador.setNumtrab(nuevoNumTrab);
+				trabajador.setSalarioBas(nuevoSalarioBas);
+				trabajador.setNivelEsc(nuevoNivelEsc);
+				trabajador.setCargo(nuevoCargo);
+				return;
+			}
+			
+		}
+		throw new IllegalArgumentException("No se encntro un trabajador con el id proporcionado");
+		
 	}
 
 
