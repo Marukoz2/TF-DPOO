@@ -25,7 +25,11 @@ public class Trabajador {
 	}
 
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		if (nombre != null && !nombre.trim().isEmpty() && nombre.matches("[a-zA-Z·ÈÌÛ˙¡…Õ”⁄Ò—]+")) {
+            this.nombre = nombre;
+        } else {
+            throw new IllegalArgumentException("Nombre inv·lido: debe contener solo letras y no estar vacÌo.");
+        }
 	}
 
 	public String getApellido() {
@@ -33,7 +37,11 @@ public class Trabajador {
 	}
 
 	public void setApellido(String apellido) {
-		this.apellido = apellido;
+		if (apellido != null && !apellido.trim().isEmpty() && apellido.matches("[a-zA-Z·ÈÌÛ˙¡…Õ”⁄Ò—]+")) {
+            this.apellido = apellido;
+        } else {
+            throw new IllegalArgumentException("Apellido inv·lido: debe contener solo letras y no estar vacÌo.");
+        }
 	}
 
 	public String getId() {
@@ -41,7 +49,13 @@ public class Trabajador {
 	}
 
 	public void setId(String id) {
-		this.id = id;
+		if (id == null || id.isEmpty() || id.matches("\\s+")) {
+	        throw new IllegalArgumentException("La ID no puede estar vacÌa ni contener solo espacios.");
+	    }
+	    if (!id.matches("^[a-zA-Z0-9]{5}$")) {
+	        throw new IllegalArgumentException("La ID debe ser alfanumÈrica y contener exactamente 5 caracteres.");
+	    }
+	    this.id = id;
 	}
 
 	public int getNumtrab() {
@@ -73,7 +87,15 @@ public class Trabajador {
 	}
 
 	public void setCargo(String cargo) {
-		this.cargo = cargo;
+		if(!cargo.equals("") && cargo.equals(" "))
+			this.cargo = cargo;
+		else throw new IllegalArgumentException("No se admite cargo vacio");
+			
+		}
+	
+	public void mostrarSaralio(double salarioBas){
+		
+		
 	}
 	
 }
