@@ -35,10 +35,17 @@ public class Micro extends Componente {
 	}
 
 	public void setVelProcesamiento(double velProcesamiento) {
-		this.velProcesamiento = velProcesamiento;
-	}
+		 if (velProcesamiento < 0) {
+		        throw new IllegalArgumentException("La velocidad de procesamiento no puede ser negativa.");
+		    }
+		    this.velProcesamiento= velProcesamiento;
+		}
+@Override
 	
-	
+
+public String mostrarPropiedades() {
+    return "Micro: " + modelo + "\nVelocidad de procesamiento: " + velProcesamiento + " GHz\nTipo de conexión: " + tipoConex;
+}
 	
 	
 	

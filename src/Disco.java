@@ -1,6 +1,6 @@
 
 public class Disco extends Componente{
-	private String Modelo;
+	private String modelo;
 	private double capacidad;
 	private String tipoConex;
 	
@@ -13,11 +13,11 @@ public class Disco extends Componente{
 	}
 
 	public String getModelo() {
-		return Modelo;
+		return modelo;
 	}
 
 	public void setModelo(String modelo) {
-		Modelo = modelo;
+		this.modelo=modelo;
 	}
 
 	public double getCapacidad() {
@@ -25,18 +25,27 @@ public class Disco extends Componente{
 	}
 
 	public void setCapacidad(double capacidad) {
-		this.capacidad = capacidad;
-	}
+		   if (capacidad < 0) {
+		        throw new IllegalArgumentException("La capacidad disponible no puede ser negativa.");
+		    }
+		    this.capacidad = capacidad;
+		}
 
 	public String getTipoConex() {
 		return tipoConex;
 	}
 
 	public void setTipoConex(String tipoConex) {
-		this.tipoConex = tipoConex;
+		this.tipoConex=tipoConex;
 	}
 	
+	@Override
 	
+	public String mostrarPropiedades(){
+		
+		
+		return "DiscoDuro:" + marca +""+ modelo + ",Capasidad:"+ capacidad +",TipoConex:"+tipoConex;
+	}
 	
 	
 	

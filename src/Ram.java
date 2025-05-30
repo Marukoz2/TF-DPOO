@@ -15,8 +15,11 @@ public class Ram extends Componente {
 	}
 
 	public void setCantMemoria(double cantMemoria) {
-		this.cantMemoria = cantMemoria;
-	}
+		 if (cantMemoria < 0) {
+		        throw new IllegalArgumentException("La capacidad en memoria no puede ser negativa.");
+		    }
+		    this.cantMemoria= cantMemoria;
+		}
 
 	public String getTipoMemoria() {
 		return tipoMemoria;
@@ -26,7 +29,11 @@ public class Ram extends Componente {
 		this.tipoMemoria = tipoMemoria;
 	}
 	
-	
+	@Override
+	public String mostrarPropiedades() {
+	    return "Memoria RAM\nMarca: " + marca + "\nCapacidad: " + cantMemoria + " GB\nTipo: " + tipoMemoria;
+	}
+
 	
 	
 	
