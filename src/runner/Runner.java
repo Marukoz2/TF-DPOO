@@ -1,3 +1,8 @@
+package runner;
+
+import Tienda;
+import interfaz.Login;
+
 import java.awt.EventQueue;
 
 
@@ -7,7 +12,7 @@ public class Runner {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Pantalla frame = new Pantalla();
+					Login frame = new Login();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
