@@ -52,7 +52,11 @@ public class MotherBoard extends Componente {
 		this.listaConex = listaConex;
 	}
 	
-	
+	@Override
+	public String mostrarPropiedades() {
+	    return "MotherBoard: " + modelo + ", Tipo RAM: " + tipoRam + ", Tipo Conector: " + tipoConector;
+	}
+
 	
 
 	

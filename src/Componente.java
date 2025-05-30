@@ -1,9 +1,9 @@
 
-public class Componente {
-	private int cantDisp;
-	private String numSerie;
-	private String marca;
-	private double precio;
+ public  abstract class Componente  {
+	protected int cantDisp;
+	protected String numSerie;
+	protected String marca;
+	protected double precio;
 	
 	public Componente(int cantDisp, String numSerie, String marca, double precio) {
 		
@@ -16,10 +16,14 @@ public class Componente {
 	public int getCantDisp() {
 		return cantDisp;
 	}
-
+    
 	public void setCantDisp(int cantDisp) {
-		this.cantDisp = cantDisp;
+	    if (cantDisp < 0) {
+	        throw new IllegalArgumentException("La cantidad disponible no puede ser negativa.");
+	    }
+	    this.cantDisp = cantDisp;
 	}
+
 
 	public String getNumSerie() {
 		return numSerie;
@@ -42,10 +46,22 @@ public class Componente {
 	}
 
 	public void setPrecio(double precio) {
-		this.precio = precio;
+		   if (precio < 0) {
+		        throw new IllegalArgumentException("La cantidad disponible no puede ser negativa.");
+		    }
+		    this.precio= precio;
+		}
+	
+	
+	public abstract String mostrarPropiedades();
+		
+	public double calcularPrecio(){	
+		return precio;
 	}
 	
-	
-	
-	
+	@Override
+	public String toString(){
+		
+		return mostrarPropiedades()+"Precio:"+ precio;
+	}
 }
