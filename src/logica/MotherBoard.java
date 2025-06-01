@@ -1,3 +1,4 @@
+package logica;
 import java.util.ArrayList;
 
 public class MotherBoard extends Componente {

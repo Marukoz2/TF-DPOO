@@ -1,9 +1,10 @@
 package runner;
 
-import Tienda;
 import interfaz.Login;
 
 import java.awt.EventQueue;
+
+import logica.Tienda;
 
 
 public class Runner {

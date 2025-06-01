@@ -1,3 +1,5 @@
+package logica;
+
 
 public class Ram extends Componente {
 	private double cantMemoria;

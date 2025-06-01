@@ -1,3 +1,4 @@
+package logica;
 
 public class Gerente {
 	private String nombre;

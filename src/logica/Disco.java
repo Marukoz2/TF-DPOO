@@ -1,3 +1,5 @@
+package logica;
+
 
 public class Disco extends Componente{
 	private String modelo;
