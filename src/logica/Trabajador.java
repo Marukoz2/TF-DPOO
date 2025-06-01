@@ -1,3 +1,4 @@
+package logica;
 
 public class Trabajador {
 	private String nombre;

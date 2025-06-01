@@ -1,3 +1,5 @@
+package logica;
+
 
 public class Micro extends Componente {
 	private String modelo;

@@ -1,3 +1,4 @@
+package logica;
 import java.util.ArrayList;
 
 
@@ -26,7 +27,7 @@ public class Tienda {
 
 	public void setNombre(String nombre) {
 		if(nombre.isEmpty()){
-			throw new IllegalArgumentException ("Nombre vacio");
+			throw new IllegalArgumentException ("Tiene que haber un nombre vacio no?");
 		}else{
 			this.nombre = nombre;
 		}
@@ -37,7 +38,10 @@ public class Tienda {
 	}
 
 	public void setNumId(String numId) {
-		this.numId = numId;
+		if(numId== "" || numId == " "){
+			throw new IllegalArgumentException ("El id no puede estar vacio");
+		}else
+			this.numId=numId;
 	}
 
 	public String getDireccion() {
@@ -45,6 +49,9 @@ public class Tienda {
 	}
 
 	public void setDireccion(String direccion) {
+		if(direccion == "" || direccion == " "){
+			throw new IllegalArgumentException ("La direccion no puede estar vacia");
+		}else
 		this.direccion = direccion;
 	}
 
@@ -53,7 +60,11 @@ public class Tienda {
 	}
 
 	public void setTelefono(String telefono) {
-		this.telefono = telefono;
+		if(telefono.matches("//d{8}")){
+			this.telefono = telefono;
+		}else
+			throw new IllegalArgumentException ("El telefo debe contener solo 8 digitos");
+		
 	}
 
 	public Gerente getGerente() {

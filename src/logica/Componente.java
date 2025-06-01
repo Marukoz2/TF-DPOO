@@ -1,3 +1,4 @@
+package logica;
 
  public  abstract class Componente  {
 	protected int cantDisp;
